@@ -30,9 +30,13 @@ class Main_win(QWidget):
         self.layout_main.addWidget(self.btn, alignment = Qt.AlignCenter)
         self.setLayout(self.layout_main)
 
+    def next_click(self):
+        self.hide()
+        self.tw = Test_win()
+
 
     def connects(self):
-        pass
+        self.btn.clicked.connect(self.next_click)
 
     
 app = QApplication([])
