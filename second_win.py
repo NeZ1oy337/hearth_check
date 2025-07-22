@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
 
 from instr import *
 from exp import *
+from final_win import Final_win
 
 class Test_win(QWidget):
     def __init__(self):
@@ -67,8 +68,8 @@ class Test_win(QWidget):
     def next_click(self):
         self.hide()
         self.exp = Experiment(self.input_name.text(), self.input_age.text(), self.input_puls1.text(), self.input_puls2.text(), self.input_puls3.text())
-
+        self.fw = Final_win(self.exp)
     def connects(self):
-        pass
+        self.btn_result.clicked.connect(self.next_click)
 
     
